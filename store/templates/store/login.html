@@ -1,0 +1,79 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block body_block %}
+
+
+
+<!-- Start Contact -->
+<section id="contact-us" class="contact-us section">
+	<div class="container">
+		<div class="contact-head">
+			<div class="row">
+				<div class="col-lg-8 col-12">
+					<div class="form-main">
+						<div class="title">
+							<h4>Đăng nhập</h4>
+						</div>
+						<form class="form" method="POST" action="{% url 'store:login.html' %}">
+							{% csrf_token %}
+							<div class="row">
+								<div class="col-lg-6 col-12">
+									<div class="form-group">
+										<label>Username<span>*</span></label>
+										<input name="username" type="text"/>
+									</div>
+								</div>
+								<div class="col-lg-6 col-12">
+									<div class="form-group">
+										<label>Password<span>*</span></label>
+										<input name="password" type="password"/>
+									</div>
+								</div>								
+								<div class="col-12">
+									<div class="form-group button">
+										<button type="submit" class="btn ">Đăng nhập</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="title">
+							<h6 style="color:blue;">{% if login_result %} {{login_result}} {% endif %}</h6>			
+							<h6 style="color:red;">{% if logout %} {{logout}} {% endif %}</h6>												
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-12">
+					<div class="single-head">
+						<div class="single-info">
+							<i class="fa fa-phone"></i>
+							<h4 class="title">Điện thoại:</h4>
+							<ul>
+								<li>(028) 12 345 678</li>
+							</ul>
+						</div>
+						<div class="single-info">
+							<i class="fa fa-envelope-open"></i>
+							<h4 class="title">Email:</h4>
+							<ul>
+								<li><a href="mailto:cskhnapmilk@gmail.com">cskhnapmilk@gmail.com</a></li>
+							</ul>
+						</div>
+						<div class="single-info">
+							<i class="fa fa-location-arrow"></i>
+							<h4 class="title">Địa chỉ:</h4>
+							<ul>
+								<li>52, Thoại Ngọc Hầu</li>
+								<li>Phường Hòa Thạnh, Quận Tân Phú, TP.HCM</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--/ End Contact -->
+
+<!--/ End Map Section -->
+{% endblock %}
+

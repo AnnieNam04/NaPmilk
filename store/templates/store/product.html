@@ -1,0 +1,61 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block body_block %}
+
+
+<!-- Modal here -->
+
+<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="section-title">
+
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+				<img src="{{product.image.url}}" alt="{{product.name}}">
+			</div>
+			<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+				<div class="quickview-content">
+					<h2>{{product.name}}</h2>
+					<div class="quickview-ratting-review">
+						<div class="quickview-ratting-wrap">
+							{{product.viewed}} views
+						</div>
+						<div class="quickview-stock">
+							<span><i class="fa fa-check-circle-o"></i> Đang mở bán</span>
+						</div>
+					</div>
+					<h4>{% load humanize %}{{product.price|floatformat:0|intcomma}} đ</h4>
+					<h3>Thông tin sản phẩm</h3>
+					<div class="quickview-peragraph">
+						<p>{{product.content|safe}}</p>
+					</div>
+					<div class="quantity">
+						<!-- Input Order -->
+						<div class="input-group">
+							<form action="{% url 'cart:cart_add' product.id %}" method="POST">
+								{{cart_product_form}}
+								{% csrf_token %}
+						</div>
+						<!--/ End Input Order -->
+					</div>
+					<div class="quickview-peragraph">
+						<div class="add-to-cart">
+							<button type="submit" class="btn ">Chọn mua</button>
+						</div>
+					</div>
+					</form>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal end -->
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<head>
+    <title>Thống kê</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Trực quan hóa dữ liệu</h2>
+        <h3>Thống kê đơn đơn - Số lượng đơn hàng</h3>
+            {% if bar_order1 %}
+                <img src="data:image/png;base64, {{bar_order1|safe}}">
+            {% endif %}
+        <h3>Thống kê đơn đơn - Thành tiền</h3>
+            {% if bar_order2 %}
+                <img src="data:image/png;base64, {{bar_order2|safe}}">
+            {% endif %}
+        <h3>Thống kê đơn đơn - Theo từng sản phẩm</h3>
+            {% if bar_order3 %}
+                <img src="data:image/png;base64, {{bar_order3|safe}}">
+            {% endif %}
+        <h3>Thống kê đơn đơn - Theo từng loại sản phẩm</h3>
+            {% if bar_order4 %}
+                <img src="data:image/png;base64, {{bar_order4|safe}}">
+            {% endif %}
+</body>
+</html>
